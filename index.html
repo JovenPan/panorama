@@ -51,11 +51,9 @@
     }
     document.title = title[page]
 
-    setTimeout(function(){
-    	var index = document.createElement('script')
-	    index.src = './js/index.js'
-	    document.getElementsByTagName('head')[0].appendChild(index)
-    }, 10)
+	var index = document.createElement('script')
+    index.src = './js/index.js'
+    document.getElementsByTagName('head')[0].appendChild(index)
 	</script>
 </head>
 <body>

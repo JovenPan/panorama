@@ -135,7 +135,7 @@ var App = {
                         image: sprite.imgs[i - leftN],
                         bothsides: !1
                     }).update()
-                    
+
                     s.addChild(p)
                 }
             }
@@ -307,4 +307,9 @@ var App = {
     }*/
 }
 
-App.init(window.config)
+var timer = setInterval(function(){
+    if(window.config) {
+        App.init(window.config)
+        clearInterval(timer)
+    }
+}, 10)
