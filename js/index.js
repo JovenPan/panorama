@@ -45,7 +45,9 @@ var App = {
     init: function(config) {
         this.config = config
 
-        document.getElementById('bg').style.backgroundImage = 'url(' + config.bg + ')'
+        if(config.bg){
+            document.getElementById('bg').style.backgroundImage = 'url(' + config.bg + ')'
+        }
 
         // 创建场景
         this._initStage()

@@ -26,38 +26,36 @@
 	</script>
 	<script>
 	function getUrlParam(name) {
-        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
-        var r = window.location.search.substr(1).match(reg);
-        if (r != null) {
-            return unescape(r[2]);
-        }
-    }
+		var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+		var r = window.location.search.substr(1).match(reg);
+		if (r != null) {
+			return unescape(r[2]);
+		}
+	}
 
-    var page = 'demo'
-  	var value = getUrlParam('page')
+	var page = 'demo'
+	var value = getUrlParam('page')
 
-  	if(value){
-  		page = value
-  	}
+	if(value){
+		page = value
+	}
 
-    var node = document.createElement('script')
-    node.src = './js/config/' + page + '.js'
-    document.getElementsByTagName('head')[0].appendChild(node)
+	var title = {
+		'demo': '全景图-原型Demo',
+		'tao': '全景图-仿淘宝造物节',
+		'anta': '全景图-仿安踏广告'
+	}
+	document.title = title[page]
 
-    var title = {
-    	'demo': '全景图-原型Demo',
-    	'tao': '全景图-仿淘宝造物节',
-    	'anta': '全景图-仿安踏广告'
-    }
-    document.title = title[page]
-
-	var index = document.createElement('script')
-    index.src = './js/index.js'
-    document.getElementsByTagName('head')[0].appendChild(index)
+	var node = document.createElement('script')
+	node.src = './js/config/' + page + '.js'
+	document.getElementsByTagName('head')[0].appendChild(node)
 	</script>
 </head>
 <body>
 	<div id="bg"></div>
 	<div id="view"></div>
+
+	<script src="./js/index.js"></script>
 </body>
 </html>

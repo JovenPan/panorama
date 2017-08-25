@@ -5,7 +5,7 @@
  **/
 
 window.config = {
-    bg: './image/demo/bg.jpg',
+    bg: '',
     panoRect: {
         w: 2580,
         h: 1170
